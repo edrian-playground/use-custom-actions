@@ -9,7 +9,7 @@ jobs:
     - id: iks-deploy
       uses: edrian-playground/composite-actions@v1
       with:
-        github-sha: ${{ github.sha }}
+        github-sha: v99
         cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
         cloud-region: us-south
         icr-namespace: ${{ secrets.ICR_NAMESPACE }}
