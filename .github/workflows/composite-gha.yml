@@ -6,9 +6,16 @@ jobs:
     name: A job to download and log into ibmcloud cli
     steps:
     - uses: actions/checkout@v2
-    - id: foo
+    - id: IKS Deployment
       uses: edrian-playground/composite-actions@v1
       with:
+        github-sha: ${{ github.sha }}
         cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
-        cloud-region: us-south    
+        cloud-region: us-south
+        icr-namespace: ${{ secrets.ICR_NAMESPACE }}
+        registry-hostname: us.icr.io
+        image-name: dashboard-gha-test
+        k8s-cluster-name: bvucbrsw0jq4m9h0kdag
+        deployment-name: openeew-dashboard
+        k8s-cluster-namespace: openeew-dev
 
