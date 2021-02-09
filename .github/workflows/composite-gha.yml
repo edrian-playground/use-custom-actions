@@ -3,13 +3,12 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to download and log into ibmcloud cli
     steps:
     - uses: actions/checkout@v2
     - id: foo
       uses: edrian-playground/composite-actions@v1
       with:
-        who-to-greet: 'Mona the Octocat'
-        cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}  
-    - run: echo random-number ${{ steps.foo.outputs.random-number }}
-      shell: bash
+        cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
+        cloud-region: us-south    
+
