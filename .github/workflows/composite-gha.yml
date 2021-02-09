@@ -10,5 +10,6 @@ jobs:
       uses: edrian-playground/composite-actions@v1
       with:
         who-to-greet: 'Mona the Octocat'
+        cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}  
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
       shell: bash
