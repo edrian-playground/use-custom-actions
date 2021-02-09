@@ -6,7 +6,7 @@ jobs:
     name: A job to download and log into ibmcloud cli
     steps:
     - uses: actions/checkout@v2
-    - id: IKS Deployment
+    - id: iks-deploy
       uses: edrian-playground/composite-actions@v1
       with:
         github-sha: ${{ github.sha }}
